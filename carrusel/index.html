@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    #carousel-container {
+      overflow: hidden;
+      width: 100%;
+      position: relative;
+    }
+
+    #carousel {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+      min-width: 100%;
+      box-sizing: border-box;
+    }
+
+    img {
+      width: 100%; /* Asegura que la imagen se adapte al 100% del contenedor */
+      height: auto; /* Permite que la altura se ajuste automáticamente */
+    }
+
+    button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 24px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    #prevBtn {
+      left: 10px;
+    }
+
+    #nextBtn {
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="carousel-container">
+  <div id="carousel">
+    <div class="slide"><img src="img1.jpg" alt="Imagen 1"></div>
+    <div class="slide"><img src="img2.jpg" alt="Imagen 2"></div>
+    <div class="slide"><img src="img1.jpg" alt="Imagen 3"></div>
+    <!-- Agrega más slides según sea necesario -->
+  </div>
+  <button id="prevBtn" onclick="prevSlide()">&#10094;</button>
+  <button id="nextBtn" onclick="nextSlide()">&#10095;</button>
+</div>
+
+<script>
+  let currentSlide = 0;
+
+  function showSlide(index) {
+    const carousel = document.getElementById('carousel');
+    const slides = document.getElementsByClassName('slide');
+    if (index >= slides.length) {
+      currentSlide = 0;
+    } else if (index < 0) {
+      currentSlide = slides.length - 1;
+    } else {
+      currentSlide = index;
+    }
+    carousel.style.transform = `translateX(${-currentSlide * 100}%)`;
+  }
+
+  function nextSlide() {
+    showSlide(currentSlide + 1);
+  }
+
+  function prevSlide() {
+    showSlide(currentSlide - 1);
+  }
+
+  // Carrusel automático
+  setInterval(nextSlide, 5000); // Cambia la imagen cada 5 segundos
+</script>
+
+</body>
+</html>
