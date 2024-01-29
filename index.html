@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Cable Pucallpa</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- LINK DE LAS FUENTES -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+  </head>
+  <body>
+
+
+    <div id="whatsapp">
+      <a href="https://wa.me/51957381166" target="_blank" id="toggle1" class="wtsapp">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+    </div>
+    
+
+    <!-------------------------------Cuerpo de la pagina----------------------------------->>
+    <header>
+      <nav class="navbar">
+        <h2 class="logo"><a href="#">NEW CABLE</a></h2>
+        <input type="checkbox" id="menu-toggler">
+        <label for="menu-toggler" id="hamburger-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="24px" height="24px">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18V11H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </label>
+        <ul class="all-links">
+          <li><a href="#home">INCIO</a></li>
+          <li><a href="#services">PLANES</a></li>
+          <li><a href="#contact">CONTACTANOS</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="homepage" id="home">
+      <div class="content">
+        <div class="text">
+          <h1>DISFRUTA DE NUESTRA COBERTURA DE FIBRA ÓPTICA</h1>
+          <p>
+            Puntos disponibles de nuestro servicio <br> San Jose - Tushmo - San Lorenzo - Ampliación San Jose</p>
+        </div>
+        <a href="#services">Paquetes Disponibles</a>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <h2>Nuestros Planes</h2>
+      <p>Disfruta de los planes , Basicos , Duo , Solo TV DIGITAL</p>
+      <ul class="cards">
+        <li class="card">
+          <img src="images/50MBPS.jpg" alt="img">
+          <h3>50 MBPS</h3>
+          <p>Desde S/60.00 Nuevos Soles</p>
+        </li>
+        <li class="card">
+          <img src="images/80MBPS.jpg" alt="img">
+          <h3>80 MPBS</h3>
+          <p>Desde S/80.00 Nuevos Soles</p>
+        </li>
+        <li class="card">
+          <img src="images/100MBPS.jpg" alt="img">
+          <h3>100 MBPS</h3>
+          <p>Desde S/100.00 Nuevos Soles</p>
+        </li>
+        <li class="card">
+          <img src="images/50MBPS+TV.jpg" alt="img">
+          <h3>50 MBPS + TV DIGITAL</h3>
+          <p>Desde S/100.00 Nuevos Soles + 120 CANALES EN SD y HD</p>
+        </li>
+        <li class="card">
+          <img src="images/80MBPS+TV.jpg" alt="img">
+          <h3>80 MBPS + TV DIGITAL</h3>
+          <p>Desde S/120.00 Nuevos Soles + 120 CANALES EN SD y HD</p>
+        </li>
+        <li class="card">
+          <img src="images/100MBPS+TV.jpg" alt="img">
+          <h3>100 MBPS + TV DIGITAL</h3>
+          <p>Desde S/140.00 Nuevos Soles + 120 CANALES EN SD y HD</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2>Contactanos</h2>
+      <p>Nuestros canales de activos son</p>
+      <div class="row">
+        <div class="col information">
+          <div class="contact-details">
+            <p><i class="fas fa-map-marker-alt"></i> Nuestra Info</p>
+            <p><i class="fas fa-envelope"></i> newcablesoporte@gmail.com</p>
+            <p><i class="fas fa-phone"></i> +51 957381166</p>
+            <p><i class="fas fa-clock"></i> Lunes - Viernes: 8:00 AM - 6:00 PM</p>
+            <p><i class="fas fa-clock"></i> Sadados : 08:00 AM - 1:00 PM</p>
+            <p><i class="fas fa-globe"></i> www.newcablepucallpa.com</p>
+          </div>          
+        </div>
+        <div class="col form">
+          <form>
+            <input type="text" placeholder="Name*" required>
+            <input type="email" placeholder="Email*" required>
+            <textarea placeholder="Message*" required></textarea>
+            <button id="submit" type="submit">Enviar Mensaje</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>
+        <span>Copyright © 2024 Derechos Reservados</span>
+        <span class="link">
+            <a href="#">Inicio</a>
+            <a href="#contact">Contactanos</a>
+        </span>
+      </div>
+    </footer>
+
+  </body>
+</html>
+
+<!--Funcionalidad de Whatssap-->>
+
+<style type="text/css">
+  #whatsapp .wtsapp {
+    position: fixed;
+    transform: all .5s ease;
+    background-color: #25d366;
+    display: block;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    border-radius: 50px;
+    border-right: none;
+    color: #fff;
+    font-weight: 700;
+    font-size: 30px;
+    bottom: 70px;
+    left: 20px;
+    border: 0;
+    z-index: 9999;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+  }
+  
+  #whatsapp .wtsapp::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    border-radius: 50%;
+    animation: pulse-border 1500ms ease-out infinite;
+  }
+  
+  #whatsapp .wtsapp:focus {
+    border: none;
+    outline: none;
+  }
+  
+  @keyframes pulse-border {
+    0% {
+      transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.2); /* Cambiado de 1.5 a 1.2 */
+      opacity: 1;
+    }
+  }
+  </style>
+  
