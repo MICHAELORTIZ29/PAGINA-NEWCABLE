@@ -99,15 +99,6 @@
             <p><i class="fas fa-globe"></i> www.newcablepucallpa.com</p>
           </div>          
         </div>
-        <div class="col form">
-          <form>
-            <input type="text" placeholder="Nombre*" required>
-            <input type="numero" placeholder="Numero Telefonico*" required>
-            <input type="email" placeholder="Correo Electronico*" required>
-            <textarea placeholder="Message*" required></textarea>
-            <button id="submit" type="submit">Enviar Mensaje</button>
-          </form>
-        </div>
       </div>
     </section>
 
@@ -179,4 +170,24 @@
     }
   }
   </style>
-  
+
+<script>
+  const $form = document.querySelector('#form');
+  const $buttonMailto = document.querySelector('#trucazo');
+
+  $form.addEventListener('submit', handleSubmit);
+
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    const form = new FormData(this);
+    console.log(form.get('name')); // Ahora debe coincidir con el atributo 'name'
+
+    const subject = encodeURIComponent(`Nuevo mensaje de ${form.get('name')}`);
+    const body = encodeURIComponent(form.get('message'));
+
+    $buttonMailto.setAttribute('href', `mailto:newcablesoporte@gmail.com?subject=${subject}&body=${body}`);
+
+    $buttonMailto.click();
+  }
+</script>
