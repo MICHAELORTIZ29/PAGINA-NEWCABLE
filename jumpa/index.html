@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+  
+
+    .carousel-container {
+      margin-top: 20px; /* Agregamos un espacio arriba del carrusel */
+      position: relative;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .carousel-slide {
+      display: flex;
+      overflow: hidden;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      display: none;
+    }
+
+    .carousel-slide img.active {
+      display: block;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 30px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+    }
+
+    header nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    header nav ul li {
+      padding: 0 35px;
+    }
+
+    header nav a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .banner-subheader {
+      background-color: #f2f2f2;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .section {
+      text-align: center;
+      margin-top: 20px; /* Ajustamos el margen superior para que coincida con la altura del menú */
+    }
+
+    .btn {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+   
+    /* ... tu código actual de arriba carrucel ... */
+
+    .sidebar {
+      position: fixed;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      background-color: #333;
+      padding: 20px;
+      text-align: center;
+      transition: all 0.3s;
+    }
+
+    .sidebar a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      margin-bottom: 10px;
+    }
+
+    .sidebar a:hover {
+      transform: translateX(-10px); /* Efecto desplazable al pasar el ratón por encima */
+    }
+
+    
+    /* codigo de las redes sociales */
+    
+
+  </style>
+  <title>Carrusel Dinámico con Menú de Navegación</title>
+</head>
+<body>
+
+<header>
+  <nav>
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#productos">Productos</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="banner-subheader">
+  <h2>¡Bienvenido!</h2>
+  <p>Esta es la sección de banner-subheader debajo del menú.</p>
+</div>
+
+<div class="carousel-container">
+  <div class="carousel-slide">
+    <img src="img1.jpg" alt="Imagen 1">
+    <img src="img2.jpg" alt="Imagen 2">
+    <img src="img3.jpg" alt="Imagen 3">
+  </div>
+</div>
+
+<script>
+  let slideIndex = 0;
+  showSlides();
+
+  function showSlides() {
+    let slides = document.getElementsByClassName("carousel-slide")[0].getElementsByTagName("img");
+    
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 2000); // Cambiar imagen cada 2 segundos
+  }
+</script>
+/* codigo de carrucel */
+
+<div class="sidebar">
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+  </div>
+  
+  <div class="banner-subheader">
+    <!-- Contenido de la sección banner-subheader -->
+  </div>
+  
+  <div class="carousel-container">
+    <!-- Contenido del carrusel -->
+  </div>
+  
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  /* codigo de las redes sociales */
+</body>
+</html>
