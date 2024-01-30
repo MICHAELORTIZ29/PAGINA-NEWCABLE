@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f0f0f0; /* Cambia el color de fondo según tu preferencia */
+    }
+
+    #plan-buttons {
+      display: flex;
+      margin-bottom: 20px;
+    }
+
+    button {
+      font-size: 18px;
+      padding: 10px;
+      margin: 5px;
+      cursor: pointer;
+      background-color: #FFD700; /* Color amarillo */
+      border: none;
+      border-radius: 5px;
+      color: #000; /* Color de texto negro */
+    }
+
+    button.clicked {
+      background-color: #3498db; /* Cambia a color azul cuando se hace clic */
+      color: #fff; /* Cambia el color de texto a blanco */
+    }
+
+    #carousel-container {
+      overflow: hidden;
+      width: 80%; /* Ajusta el ancho del carrusel según tus necesidades */
+      max-width: 800px; /* Ancho máximo del carrusel */
+      position: relative;
+      margin: 0 auto;
+    }
+
+    #carousel {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .plan {
+      flex: 0 0 50%; /* Ancho del contenedor del carrusel (50% para mostrar dos en una fila) */
+      box-sizing: border-box;
+      background-color: #4CAF50; /* Color verde */
+      color: #fff; /* Color de texto blanco */
+      border-radius: 8px;
+      margin: 10px;
+      overflow: hidden;
+      display: none; /* Inicialmente oculto */
+    }
+
+    .plan.active {
+      display: flex; /* Mostrar solo el plan activo */
+    }
+
+    .slide {
+      box-sizing: border-box;
+      text-align: center;
+      padding: 20px;
+      width: 100%; /* Ocupar el 100% del ancho del contenedor */
+      border-right: 1px solid #fff; /* Línea divisoria entre promociones */
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    #prevBtn,
+    #nextBtn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 24px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #fff; /* Color de flechas blanco */
+    }
+
+    #prevBtn {
+      left: 10px;
+    }
+
+    #nextBtn {
+      right: 10px;
+    }
+
+    #plan-description {
+      text-align: center;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+
+<div id="plan-buttons">
+  <button id="button1" onclick="showPlan(0)">SOLO INTERNET</button>
+  <button id="button2" onclick="showPlan(1)">INTERNET + IPTV</button>
+  <button id="button3" onclick="showPlan(2)">IPTV</button>
+  <button id="button4" onclick="showPlan(3)">Promociones del mes</button>
+</div>
+
+<div id="carousel-container">
+  <div id="carousel">
+    <div class="plan active" id="plan1">
+      <div class="slide">
+        <h2>50 MBPS</h2>
+        <img src="" alt="Imagen de la promoción">
+        <p>Contenido de la Promoción 1</p>
+      </div>
+      <div class="slide">
+        <h2>80 MPS</h2>
+        <img src="" alt="Imagen de la promoción">
+        <p>Contenido de la Promoción 2</p>
+      </div>
+      <div class="slide">
+        <h2>100 MPS</h2>
+        <img src="" alt="Imagen de la promoción">
+        <p>Contenido de la Promoción 3</p>
+      </div>
+      <!-- Agrega más slides según sea necesario para el Plan 1 -->
+    </div>
+    <div class="plan" id="plan2">
+      <div class="slide">
+        <h2>Plan 2 - Promoción 1</h2>
+        <img src="" alt="Imagen de la promoción">
+        <p>Contenido de la Promoción 1</p>
+      </div>
+      <div class="slide">
+        <h2>Plan 2 - Promoción 2</h2>
+        <img src="" alt="Imagen de la promoción">
+        <p>Contenido de la Promoción 2</p>
+      </div>
+      <!-- Agrega más slides según sea necesario para el Plan 2 -->
+    </div>
+    <div class="plan" id="plan3">
+        <div class="slide">
+          <h2>Plan 3- Promoción 1</h2>
+          <img src="" alt="Imagen de la promoción">
+          <p>Contenido de la Promoción 1</p>
+        </div>
+        <div class="slide">
+          <h2>Plan 3 - Promoción 2</h2>
+          <img src="" alt="Imagen de la promoción">
+          <p>Contenido de la Promoción 2</p>
+        </div>
+        <!-- Agrega más slides según sea necesario para el Plan 3 -->
+      </div>
+      <div class="plan" id="plan4">
+        <div class="slide">
+          <h2>Plan 4 - Promoción 1</h2>
+          <img src="" alt="Imagen de la promoción">
+          <p>Contenido de la Promoción 1</p>
+        </div>
+        <div class="slide">
+          <h2>Plan 4 - Promoción 2</h2>
+          <img src="" alt="Imagen de la promoción">
+          <p>Contenido de la Promoción 2</p>
+        </div>
+        <!-- Agrega más slides según sea necesario para el Plan 4 -->
+      </div>
+    <!-- Agrega más planes según sea necesario -->
+  </div>
+  <button id="prevBtn" onclick="prevSlide()">&#10094;</button>
+  <button id="nextBtn" onclick="nextSlide()">&#10095;</button>
+</div>
+
+<div id="plan-description"></div>
+
+<script>
+  let currentSlide = 0;
+
+  // Al cargar la página, mostrar el carrusel del Plan 1
+  document.addEventListener("DOMContentLoaded", function () {
+    showPlan(0);
+  });
+
+  function showSlide(index) {
+    const carousel = document.getElementById('carousel');
+    const slides = document.querySelectorAll('.plan.active .slide');
+    if (index >= slides.length) {
+      currentSlide = 0;
+    } else if (index < 0) {
+      currentSlide = slides.length - 2; // Mostrar dos contenedores a la vez
+    } else {
+      currentSlide = index;
+    }
+    carousel.style.transform = `translateX(${-currentSlide * 50}%)`; // 50% para mostrar dos contenedores
+  }
+
+  function nextSlide() {
+    showSlide(currentSlide + 2); // Avanzar dos contenedores a la vez
+  }
+
+  function prevSlide() {
+    showSlide(currentSlide - 2); // Retroceder dos contenedores a la vez
+  }
+
+  function showPlan(planIndex) {
+    const planContainers = document.querySelectorAll('.plan');
+    const description = document.getElementById('plan-description');
+    const buttons = document.querySelectorAll("#plan-buttons button");
+
+    planContainers.forEach((planContainer, index) => {
+      if (index === planIndex) {
+        planContainer.classList.add('active');
+      } else {
+        planContainer.classList.remove('active');
+      }
+    });
+
+    // Actualiza la descripción adicional (puedes comentarla si no es necesaria)
+    description.innerHTML = `<h2>Plan ${planIndex + 1}</h2>`;
+
+    // Cambia el estilo de los botones
+    buttons.forEach(button => {
+      button.classList.remove("clicked");
+    });
+
+    buttons[planIndex].classList.add("clicked");
+
+    // Muestra el primer slide del plan activo
+    showSlide(0);
+  }
+
+  // Carrusel automático
+  setInterval(() => {
+    const activePlanIndex = Array.from(document.querySelectorAll('.plan')).findIndex(plan => plan.classList.contains('active'));
+    showSlide(currentSlide + 2, activePlanIndex); // Avanzar dos contenedores a la vez
+  }, 5000); // Cambia la imagen cada 5 segundos
+</script>
+
+</body>
+</html>
