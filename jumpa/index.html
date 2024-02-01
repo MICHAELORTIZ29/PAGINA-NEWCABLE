@@ -39,91 +39,96 @@
       <!-------------------------------Agregado por jumpa ----------------------------------->>
       <style>
         body {
+          margin-top: 55px;
           font-family: Arial, sans-serif;
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-          text-align: center;
         }
     
-        .carousel-container {
-
-          width: 100%; /* Ocupar el ancho completo de la pantalla */
-          max-width: 9000px; /* Máximo ancho del carrusel */
-          margin-top:0px;
+        #carousel-container {
           overflow: hidden;
-          height: 800px
-        
-          
-          
+          width: 100%;
+          position: relative;
         }
     
-        .carousel-inner {
+        #carousel {
           display: flex;
           transition: transform 0.5s ease-in-out;
         }
     
-        .carousel-slide {
-          flex: 0 0 100%;
+        .slide {
+          min-width: 100%;
+          box-sizing: border-box;
         }
     
-        .carousel-slide img {
-          width: 100%;
+        img {
+          width: 100%; /* Asegura que la imagen se adapte al 100% del contenedor */
+          height: auto; /* Permite que la altura se ajuste automáticamente */
+        }
+    
+        button {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 24px;
+          background: none;
+          border: none;
+          cursor: pointer;
+        }
+    
+        #prevBtn {
+          left: 10px;
+        }
+    
+        #nextBtn {
+          right: 10px;
         }
       </style>
 
 
-
       
     </header>
-
-   
-      <div id="carrusel-container" class="carousel-container">
-        <div class="carousel-inner" id="carrusel">
-          <div class="carousel-slide">
-            <img src="images/fondo_home.jpeg" alt="Imagen 1.1">
-          </div>
-      
-          <div class="carousel-slide">
-            <img src="images/fondo_home.jpeg" alt="Imagen 2.1">
-          </div>
-      
-          <div class="carousel-slide">
-            <img src="images/100MBPS+TV.jpg" alt="Imagen 3.1">
-          </div>
-          
-          <div class="carousel-slide">
-            <img src="images/fondo_home.jpeg" alt="Imagen 4.1">
-          </div>
-        </div>
+    
+    <div id="carousel-container">
+      <div id="carousel">
+        <div class="slide"><img src="images/home_principal.jpg" alt="Imagen 1"></div>
+        <div class="slide"><img src="images/home_carrusel.jpg" alt="Imagen 2"></div>
+        <div class="slide"><img src="images/img22.jpg" alt="Imagen 3"></div>
+        <!-- Agrega más slides según sea necesario -->
       </div>
-    
-    
-    
+      <button id="prevBtn" onclick="prevSlide()">&#10094;</button>
+      <button id="nextBtn" onclick="nextSlide()">&#10095;</button>
+    </div>
     
     <script>
-      function showSlides() {
-        let slideIndex = 0;
-        let slides = document.querySelectorAll('.carousel-slide');
-        let carouselInner = document.getElementById('carrusel');
+      let currentSlide = 0;
     
-        function moveSlide() {
-          slideIndex++;
-          if (slideIndex >= slides.length) {
-            slideIndex = 0;
-          }
-    
-          let translateValue = -slideIndex * 100 + "%";
-          carouselInner.style.transform = "translateX(" + translateValue + ")";
+      function showSlide(index) {
+        const carousel = document.getElementById('carousel');
+        const slides = document.getElementsByClassName('slide');
+        if (index >= slides.length) {
+          currentSlide = 0;
+        } else if (index < 0) {
+          currentSlide = slides.length - 1;
+        } else {
+          currentSlide = index;
         }
-    
-        // Iniciar el movimiento del carrusel y repetir cada 2 segundos
-        setInterval(moveSlide, 2000);
+        carousel.style.transform = `translateX(${-currentSlide * 100}%)`;
       }
     
-      // Llamar a la función para iniciar el carrusel automáticamente
-      showSlides();
+      function nextSlide() {
+        showSlide(currentSlide + 1);
+      }
+    
+      function prevSlide() {
+        showSlide(currentSlide - 1);
+      }
+    
+      // Carrusel automático
+      setInterval(nextSlide, 5000); // Cambia la imagen cada 5 segundos
     </script>
+     
+    
+    
+ 
  <!-------------------------------Agregado por jumpa hasta aqui  ----------------------------------->
 
     <section class="services" id="services">
