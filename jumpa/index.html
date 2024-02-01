@@ -1,176 +1,271 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <style>
-  
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Cable Pucallpa</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- LINK DE LAS FUENTES -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+  </head>
+  <body>
 
-    .carousel-container {
-      margin-top: 20px; /* Agregamos un espacio arriba del carrusel */
-      position: relative;
-      max-width: 600px;
-      margin: auto;
-    }
 
-    .carousel-slide {
-      display: flex;
-      overflow: hidden;
-    }
+    <div id="whatsapp">
+      <a href="https://wa.me/51957381166" target="_blank" id="toggle1" class="wtsapp">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+    </div>
+    
 
-    .carousel-slide img {
-      width: 100%;
-      display: none;
-    }
+    <!-------------------------------Cuerpo de la pagina----------------------------------->>
+    <header>
+      <nav class="navbar">
+        <h2 class="logo"><a href="#">New Cable</a></h2>
+        <input type="checkbox" id="menu-toggler">
+        <label for="menu-toggler" id="hamburger-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="24px" height="24px">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18V11H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </label>
+        <ul class="all-links">
+          <li><a href="#home">INICIO</a></li>
+          <li><a href="#services">PLANES</a></li>
+          <li><a href="#contact">CONTACTANOS</a></li>
+        </ul>
+      </nav>
 
-    .carousel-slide img.active {
-      display: block;
-    }
+      <!-------------------------------Agregado por jumpa ----------------------------------->>
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          text-align: center;
+        }
+    
+        .carousel-container {
 
-    header {
-      background-color: #333;
-      color: #fff;
-      text-align: center;
-      padding: 30px 0;
-      position: fixed;
-      width: 100%;
-      top: 0;
-    }
+          width: 100%; /* Ocupar el ancho completo de la pantalla */
+          max-width: 9000px; /* Máximo ancho del carrusel */
+          margin-top:0px;
+          overflow: hidden;
+          height: 800px
+        
+          
+          
+        }
+    
+        .carousel-inner {
+          display: flex;
+          transition: transform 0.5s ease-in-out;
+        }
+    
+        .carousel-slide {
+          flex: 0 0 100%;
+        }
+    
+        .carousel-slide img {
+          width: 100%;
+        }
+      </style>
 
-    header nav ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-    }
 
-    header nav ul li {
-      padding: 0 35px;
-    }
 
-    header nav a {
-      color: #fff;
-      text-decoration: none;
-    }
+      
+    </header>
 
-    .banner-subheader {
-      background-color: #f2f2f2;
-      padding: 20px;
-      text-align: center;
-    }
-
-    .section {
-      text-align: center;
-      margin-top: 20px; /* Ajustamos el margen superior para que coincida con la altura del menú */
-    }
-
-    .btn {
-      padding: 10px 20px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      margin-bottom: 20px;
-    }
    
-    /* ... tu código actual de arriba carrucel ... */
-
-    .sidebar {
-      position: fixed;
-      top: 50%;
-      right: 0;
-      transform: translateY(-50%);
-      background-color: #333;
-      padding: 20px;
-      text-align: center;
-      transition: all 0.3s;
-    }
-
-    .sidebar a {
-      display: block;
-      color: #fff;
-      text-decoration: none;
-      margin-bottom: 10px;
-    }
-
-    .sidebar a:hover {
-      transform: translateX(-10px); /* Efecto desplazable al pasar el ratón por encima */
-    }
-
+      <div id="carrusel-container" class="carousel-container">
+        <div class="carousel-inner" id="carrusel">
+          <div class="carousel-slide">
+            <img src="images/fondo_home.jpeg" alt="Imagen 1.1">
+          </div>
+      
+          <div class="carousel-slide">
+            <img src="images/fondo_home.jpeg" alt="Imagen 2.1">
+          </div>
+      
+          <div class="carousel-slide">
+            <img src="images/100MBPS+TV.jpg" alt="Imagen 3.1">
+          </div>
+          
+          <div class="carousel-slide">
+            <img src="images/fondo_home.jpeg" alt="Imagen 4.1">
+          </div>
+        </div>
+      </div>
     
-    /* codigo de las redes sociales */
     
+    
+    
+    <script>
+      function showSlides() {
+        let slideIndex = 0;
+        let slides = document.querySelectorAll('.carousel-slide');
+        let carouselInner = document.getElementById('carrusel');
+    
+        function moveSlide() {
+          slideIndex++;
+          if (slideIndex >= slides.length) {
+            slideIndex = 0;
+          }
+    
+          let translateValue = -slideIndex * 100 + "%";
+          carouselInner.style.transform = "translateX(" + translateValue + ")";
+        }
+    
+        // Iniciar el movimiento del carrusel y repetir cada 2 segundos
+        setInterval(moveSlide, 2000);
+      }
+    
+      // Llamar a la función para iniciar el carrusel automáticamente
+      showSlides();
+    </script>
+ <!-------------------------------Agregado por jumpa hasta aqui  ----------------------------------->
 
+    <section class="services" id="services">
+      <h2>Nuestros Planes</h2>
+      <p>Disfruta de los planes , Basicos , Duo , Solo TV DIGITAL</p>
+      <ul class="cards">
+        <li class="card">
+          <img src="images/50MBPS.jpg" alt="img">
+          <h3>50 MBPS</h3>
+          <p>Desde S/60.00 Nuevos Soles</p>
+        </li>
+        <li class="card">
+          <img src="images/80MBPS.jpg" alt="img">
+          <h3>80 MPBS</h3>
+          <p>Desde S/80.00 Nuevos Soles</p>
+        </li>
+        <li class="card">
+          <img src="images/100MBPS.jpg" alt="img">
+          <h3>100 MBPS</h3>
+          <p>Desde S/100.00 Nuevos Soles</p>
+        </li>
+        <li class="card">
+          <img src="images/50MBPS+TV.jpg" alt="img">
+          <h3>50 MBPS + TV DIGITAL</h3>
+          <p>Desde S/100.00 Nuevos Soles + 120 CANALES EN SD y HD</p>
+        </li>
+        <li class="card">
+          <img src="images/80MBPS+TV.jpg" alt="img">
+          <h3>80 MBPS + TV DIGITAL</h3>
+          <p>Desde S/120.00 Nuevos Soles + 120 CANALES EN SD y HD</p>
+        </li>
+        <li class="card">
+          <img src="images/100MBPS+TV.jpg" alt="img">
+          <h3>100 MBPS + TV DIGITAL</h3>
+          <p>Desde S/140.00 Nuevos Soles + 120 CANALES EN SD y HD</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2>Contactanos</h2>
+      <p>Nuestros canales de activos son</p>
+      <div class="row">
+        <div class="col information">
+          <div class="contact-details">
+            <p><i class="fas fa-map-marker-alt"></i> Nuestra Info</p>
+            <p><i class="fas fa-envelope"></i> newcablesoporte@gmail.com</p>
+            <p><i class="fas fa-phone"></i> +51 957381166</p>
+            <p><i class="fas fa-clock"></i> Lunes - Viernes: 8:00 AM - 6:00 PM</p>
+            <p><i class="fas fa-clock"></i> Sadados : 08:00 AM - 1:00 PM</p>
+            <p><i class="fas fa-globe"></i> www.newcablepucallpa.com</p>
+          </div>          
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>
+        <span>Copyright © 2024 Derechos Reservados</span>
+        <span class="link">
+            <a href="#">Inicio</a>
+            <a href="#contact">Contactanos</a>
+        </span>
+      </div>
+    </footer>
+
+  </body>
+</html>
+
+<!--Funcionalidad de Whatssap-->>
+
+<style type="text/css">
+  #whatsapp .wtsapp {
+    position: fixed;
+    transform: all .5s ease;
+    background-color: #25d366;
+    display: block;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    border-radius: 50px;
+    border-right: none;
+    color: #fff;
+    font-weight: 700;
+    font-size: 30px;
+    bottom: 70px;
+    left: 20px;
+    border: 0;
+    z-index: 9999;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+  }
+  
+  #whatsapp .wtsapp::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    border-radius: 50%;
+    animation: pulse-border 1500ms ease-out infinite;
+  }
+  
+  #whatsapp .wtsapp:focus {
+    border: none;
+    outline: none;
+  }
+  
+  @keyframes pulse-border {
+    0% {
+      transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.2); /* Cambiado de 1.5 a 1.2 */
+      opacity: 1;
+    }
+  }
   </style>
-  <title>Carrusel Dinámico con Menú de Navegación</title>
-</head>
-<body>
-
-<header>
-  <nav>
-    <ul>
-      <li><a href="#inicio">Inicio</a></li>
-      <li><a href="#productos">Productos</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-    </ul>
-  </nav>
-</header>
-
-<div class="banner-subheader">
-  <h2>¡Bienvenido!</h2>
-  <p>Esta es la sección de banner-subheader debajo del menú.</p>
-</div>
-
-<div class="carousel-container">
-  <div class="carousel-slide">
-    <img src="img1.jpg" alt="Imagen 1">
-    <img src="img2.jpg" alt="Imagen 2">
-    <img src="img3.jpg" alt="Imagen 3">
-  </div>
-</div>
 
 <script>
-  let slideIndex = 0;
-  showSlides();
+  const $form = document.querySelector('#form');
+  const $buttonMailto = document.querySelector('#trucazo');
 
-  function showSlides() {
-    let slides = document.getElementsByClassName("carousel-slide")[0].getElementsByTagName("img");
-    
-    for (let i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
+  $form.addEventListener('submit', handleSubmit);
 
-    slideIndex++;
-    if (slideIndex > slides.length) {slideIndex = 1}
+  function handleSubmit(event) {
+    event.preventDefault();
 
-    slides[slideIndex - 1].style.display = "block";
-    setTimeout(showSlides, 2000); // Cambiar imagen cada 2 segundos
+    const form = new FormData(this);
+    console.log(form.get('name')); // Ahora debe coincidir con el atributo 'name'
+
+    const subject = encodeURIComponent(`Nuevo mensaje de ${form.get('name')}`);
+    const body = encodeURIComponent(form.get('message'));
+
+    $buttonMailto.setAttribute('href', `mailto:newcablesoporte@gmail.com?subject=${subject}&body=${body}`);
+
+    $buttonMailto.click();
   }
 </script>
-/* codigo de carrucel */
-
-<div class="sidebar">
-    <a href="#"><i class="fab fa-facebook-f"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-  </div>
-  
-  <div class="banner-subheader">
-    <!-- Contenido de la sección banner-subheader -->
-  </div>
-  
-  <div class="carousel-container">
-    <!-- Contenido del carrusel -->
-  </div>
-  
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
-  /* codigo de las redes sociales */
-</body>
-</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .carousel-container {
+      max-width: 600px;
+      margin: auto;
+      overflow: hidden;
+    }
+
+    .carousel-inner {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-slide {
+      flex: 0 0 100%;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+    }
+  </style>
+  <title>Carrusel Automático</title>
+</head>
+<body>
+
+<div id="carrusel-container" class="carousel-container">
+  <div class="carousel-inner" id="carrusel">
+    <div class="carousel-slide">
+      <img src="img1.jpg" alt="Imagen 1.1">
+    </div>
+
+    <div class="carousel-slide">
+      <img src="img2_1.jpg" alt="Imagen 2.1">
+    </div>
+
+    <div class="carousel-slide">
+      <img src="img3_1.jpg" alt="Imagen 3.1">
+    </div>
+  </div>
+</div>
+
+<script>
+  function showSlides() {
+    let slideIndex = 0;
+    let slides = document.querySelectorAll('.carousel-slide');
+    let carouselInner = document.getElementById('carrusel');
+
+    function moveSlide() {
+      slideIndex++;
+      if (slideIndex >= slides.length) {
+        slideIndex = 0;
+      }
+
+      let translateValue = -slideIndex * 100 + "%";
+      carouselInner.style.transform = "translateX(" + translateValue + ")";
+    }
+
+    // Iniciar el movimiento del carrusel y repetir cada 2 segundos
+    setInterval(moveSlide, 2000);
+  }
+
+  // Llamar a la función para iniciar el carrusel automáticamente
+  showSlides();
+</script>
+
+</body>
+</html>
+
