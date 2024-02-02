@@ -39,7 +39,7 @@
       <!-------------------------------Agregado por jumpa ----------------------------------->>
       <style>
         body {
-          margin-top: 55px;
+          margin-top: -23px;
           font-family: Arial, sans-serif;
         }
     
@@ -57,6 +57,7 @@
         .slide {
           min-width: 100%;
           box-sizing: border-box;
+         
         }
     
         img {
@@ -81,12 +82,24 @@
         #nextBtn {
           right: 10px;
         }
+
+        #services {
+      margin-top: -70px; /* Puedes ajustar este valor según tus necesidades */
+      /* Agregado para visualizar la sección */
+    }
+
+    ul.cards {
+  margin-top: 0px; /* Puedes ajustar este valor según tus necesidades */
+  padding: 0;   /* Elimina el relleno predeterminado de la lista */
+  list-style: none; /* Elimina los estilos de la lista (viñetas) */
+}
       </style>
 
 
       
     </header>
-    
+
+    <section>
     <div id="carousel-container">
       <div id="carousel">
         <div class="slide"><img src="images/home_principal.jpg" alt="Imagen 1"></div>
@@ -97,7 +110,8 @@
       <button id="prevBtn" onclick="prevSlide()">&#10094;</button>
       <button id="nextBtn" onclick="nextSlide()">&#10095;</button>
     </div>
-    
+  </section>
+
     <script>
       let currentSlide = 0;
     
@@ -134,6 +148,7 @@
     <section class="services" id="services">
       <h2>Nuestros Planes</h2>
       <p>Disfruta de los planes , Basicos , Duo , Solo TV DIGITAL</p>
+      <br>
       <ul class="cards">
         <li class="card">
           <img src="images/50MBPS.jpg" alt="img">
