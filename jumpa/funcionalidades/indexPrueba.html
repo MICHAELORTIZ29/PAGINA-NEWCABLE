@@ -1,80 +1,41 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      text-align: center;
-    }
+    <style>
+        ul {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: auto;
+            gap: 10px;
+            justify-content: center;
+            padding: 0;
+        }
 
-    .carousel-container {
-      max-width: 600px;
-      margin: auto;
-      overflow: hidden;
-    }
+        li {
+            list-style: none;
+        }
 
-    .carousel-inner {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
+        img {
+            width: 100%;
+            height: 50px;
+            transition: transform 0.5s;
+        }
 
-    .carousel-slide {
-      flex: 0 0 100%;
-    }
-
-    .carousel-slide img {
-      width: 100%;
-    }
-  </style>
-  <title>Carrusel Automático</title>
+        img:hover {
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 <body>
-
-<div id="carrusel-container" class="carousel-container">
-  <div class="carousel-inner" id="carrusel">
-    <div class="carousel-slide">
-      <img src="img1.jpg" alt="Imagen 1.1">
-    </div>
-
-    <div class="carousel-slide">
-      <img src="img2_1.jpg" alt="Imagen 2.1">
-    </div>
-
-    <div class="carousel-slide">
-      <img src="img3_1.jpg" alt="Imagen 3.1">
-    </div>
-  </div>
-</div>
-
-<script>
-  function showSlides() {
-    let slideIndex = 0;
-    let slides = document.querySelectorAll('.carousel-slide');
-    let carouselInner = document.getElementById('carrusel');
-
-    function moveSlide() {
-      slideIndex++;
-      if (slideIndex >= slides.length) {
-        slideIndex = 0;
-      }
-
-      let translateValue = -slideIndex * 100 + "%";
-      carouselInner.style.transform = "translateX(" + translateValue + ")";
-    }
-
-    // Iniciar el movimiento del carrusel y repetir cada 2 segundos
-    setInterval(moveSlide, 2000);
-  }
-
-  // Llamar a la función para iniciar el carrusel automáticamente
-  showSlides();
-</script>
-
+    <section>
+        <ul>
+            <li><img src="img1.jpg" alt="Imagen 1"></li>
+            <li><img src="img2.jpg" alt="Imagen 2"></li>
+            <li><img src="img3.jpg" alt="Imagen 3"></li>
+            <li><img src="img4.jpg" alt="Imagen 4"></li>
+            <li><img src="imagen5.jpg" alt="Imagen 5"></li>
+            <li><img src="imagen6.jpg" alt="Imagen 6"></li>
+        </ul>
+    </section>
 </body>
 </html>
-

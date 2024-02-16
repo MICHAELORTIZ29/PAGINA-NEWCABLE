@@ -183,16 +183,7 @@ section.about {
   padding-left: 20px;
 }
 
-section .cards .card {
-  background: #fff;
-  padding: 40px 15px;
-  list-style: none;
-  border-radius: 5px;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.04);
-  margin-bottom: 40px;
-  width: calc(100% / 3 - 30px);
-  text-align: center;
-}
+
 
 .portfolio .cards .card {
   padding: 0 0 20px;
@@ -376,5 +367,123 @@ footer a {
     width: 100%;
     margin-bottom: 30px;
   }
+
+
+  
 }
+
+ /* funcionalidades de whasapp */
+
+ #whatsapp .wtsapp {
+  position: fixed;
+  transform: all .5s ease;
+  background-color: #25d366;
+  display: block;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  border-radius: 50px;
+  border-right: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: 30px;
+  bottom: 70px;
+  left: 20px;
+  border: 0;
+  z-index: 9999;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+}
+
+#whatsapp .wtsapp::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: block;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  border-radius: 50%;
+  animation: pulse-border 1500ms ease-out infinite;
+}
+
+#whatsapp .wtsapp:focus {
+  border: none;
+  outline: none;
+}
+
+@keyframes pulse-border {
+  0% {
+    transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.2); /* Cambiado de 1.5 a 1.2 */
+    opacity: 1;
+  }
+}
+
+ /* funcionalidades del carrucel*/
+
+ body {
+  margin-top: -23px;
+  font-family: Arial, sans-serif;
+}
+
+#carousel-container {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  border-radius: 5px;
+}
+
+#carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  
+}
+
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+ 
+}
+
+img {
+  width: 100%; /* Asegura que la imagen se adapte al 100% del contenedor */
+  height: 500px; /* Permite que la altura se ajuste automáticamente */
+}
+
+button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#prevBtn {
+  left: 10px;
+}
+
+#nextBtn {
+  right: 10px;
+}
+
+#services {
+margin-top: -70px; /* Puedes ajustar este valor según tus necesidades */
+/* Agregado para visualizar la sección */
+}
+
+ul.cards {
+margin-top: 0px; /* Puedes ajustar este valor según tus necesidades */
+padding: 0;   /* Elimina el relleno predeterminado de la lista */
+list-style: none; /* Elimina los estilos de la lista (viñetas) */
+}
+ 
 
