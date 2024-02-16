@@ -89,33 +89,34 @@
       <h2>Nuestros Planes</h2>
       <p>Disfruta de los planes , Basicos , Duo , Solo TV DIGITAL</p>
       <br>
-      <ul class="cards">
-        <li class="card" >
+      <ul class="cards" >
+        <li class="card" onclick="sendMessage('Hola, quiero más información del plan de 50 MBPS')">
           <img src="images/50MBPS.jpg" alt="img" >
           <h3>50 MBPS</h3>
           <p>Desde S/60.00 Nuevos Soles</p>
         </li>
-        <li class="card">
+        <li class="card" onclick="sendMessage('Hola, quiero más información del plan de 80 MPBS')">
           <img src="images/80MBPS.jpg" alt="img">
           <h3>80 MPBS</h3>
           <p>Desde S/80.00 Nuevos Soles</p>
         </li>
-        <li class="card">
+        <li class="card" onclick="sendMessage('Hola, quiero más información del plan de 100 MBPS')">
           <img src="images/100MBPS.jpg" alt="img">
           <h3>100 MBPS</h3>
           <p>Desde S/100.00 Nuevos Soles</p>
         </li>
-        <li class="card">
+        <li class="card" onclick="sendMessage('Hola, quiero más información del plan de 50 MBPS + TV DIGITAL')">
+          
           <img src="images/50MBPS+TV.jpg" alt="img">
           <h3>50 MBPS + TV DIGITAL</h3>
           <p>Desde S/100.00 Nuevos Soles + 120 CANALES EN SD y HD</p>
         </li>
-        <li class="card">
+        <li class="card" onclick="sendMessage('Hola, quiero más información del plan de 80 MBPS + TV DIGITAL')" >
           <img src="images/80MBPS+TV.jpg" alt="img">
           <h3>80 MBPS + TV DIGITAL</h3>
           <p>Desde S/120.00 Nuevos Soles + 120 CANALES EN SD y HD</p>
         </li>
-        <li class="card">
+        <li class="card" onclick="sendMessage('Hola, quiero más información del plan de 100 MBPS + TV DIGITAL')">
           <img src="images/100MBPS+TV.jpg" alt="img">
           <h3>100 MBPS + TV DIGITAL</h3>
           <p>Desde S/140.00 Nuevos Soles + 120 CANALES EN SD y HD</p>
@@ -153,43 +154,6 @@
   </body>
 </html>
 
-<style>
- 
-  
-
-
-  section .cards .card {
-  background: #fff;
-  padding: 40px 15px;
-  list-style: none;
-  border-radius: 5px;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.04);
-  margin-bottom: 40px;
-  width: calc(100% / 3 - 30px);
-  text-align: center;
-  transition: background-color 0.5s;
-}
- /* TRANSITION */
-        .cards .card img {
-            transition: transform 0.3s;
-        }
-
-        .cards .card img:hover {
-            transform: scale(1.1);
-            
-        }
-/* Mueve la imagen horizontalmente al pasar el mouse sobre la tarjeta */
-        .card:hover img {
-            transform: translateY(5px); 
-       
-        }
-
-        
-/* Cambia el color de fondo solo cuando se pasa el mouse sobre la tarjeta */
-        .cards .card:hover {
-            background: #b5dff3;
-        }
-</style>
 
 <script>
   function changeColor(element) {
@@ -220,5 +184,13 @@
     $buttonMailto.setAttribute('href', `mailto:newcablesoporte@gmail.com?subject=${subject}&body=${body}`);
 
     $buttonMailto.click();
+  }
+</script>
+
+<script>
+  function sendMessage(message) {
+    var phoneNumber = '957381166'; // Reemplaza con el número de teléfono de WhatsApp
+    var whatsappURL = 'https://wa.me/' + phoneNumber + '?text=' + encodeURIComponent(message);
+    window.location.href = whatsappURL;
   }
 </script>
