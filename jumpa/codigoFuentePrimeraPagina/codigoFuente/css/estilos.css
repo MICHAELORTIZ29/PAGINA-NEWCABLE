@@ -1,0 +1,120 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat' sans-serif;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    font-size: 1.9rem;
+    background: url(../images/29010522_31j_1_ecer_background_24.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.form{
+    width: 50%;
+    min-width: 300px;
+    background: rgb(0, 0, 0,0.491);
+    margin: auto;
+    margin-top: 50px;
+    padding:  20px;
+    color: white;
+    
+}
+.header span{
+    color: white;
+}
+
+.form__input{
+    width: 100%;
+    height: 45px;
+    background: whitesmoke;
+    padding: 10px;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #2756c265;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: black;
+}
+
+.select_puntodeventa{
+    font-size: 15px;
+    width: 100%;
+    padding: 10px;
+    background-color: whitesmoke;
+    color: white;
+    margin-bottom: 15px; 
+    color: black;
+}
+.select_plan{
+    font-size: 15px;
+    width: 100%;
+    padding: 10px;
+    background-color: whitesmoke;
+    color: white;
+    margin-bottom: 15px; 
+    color: black;
+    
+}
+
+.label_option{
+    font-size: 15px;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: black; 
+
+}
+
+h1{
+    text-align: center;
+    color: yellow;
+    padding-bottom: 16px;
+    font-weight: 500;
+}
+.form__label{
+    display: block;
+    font-size: 1.7rem;
+    font-weight: 300;
+}
+.enviar{
+    width: 100%;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    outline: none;
+    border: none;
+    background: white;
+    color: black;
+    text-align: center;
+    font-size: 1.6rem;
+    margin: 20px 0 20px;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.enviar:hover{
+    background: #D5DBDB;
+}
+.animation-cer-btn {
+    background: whitesmoke;
+    padding: 12px 30px;
+    color: #272727;
+    font-size: 18px;
+    border-radius: 5px;
+    position: relative;
+    margin-bottom: 1em;
+    display: inline-block;
+    border: none;
+    font-size: 23px;
+    font-weight: 500;
+}
+
+    .animation-cer-btn:hover {
+        background: #272727;
+        color: whitesmoke;
+    }

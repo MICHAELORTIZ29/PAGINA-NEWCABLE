@@ -1,0 +1,48 @@
+.scroll-top {
+    width: 80px;
+    height: 80px;
+    line-height: 50px;
+    position: fixed;
+    bottom: 200%;
+    right: 30px;
+    font-size: 16px;
+    border-radius: 50px;
+    z-index: 99;
+    color: #ffffff;
+    text-align: center;
+    cursor: pointer;
+    background: #55f58f;
+    transition: 1s ease;
+    border: none;
+    opacity: 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.scroll-top.open {
+    bottom: 30px;
+    opacity: 1;
+}
+
+.scroll-top::after {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    top: 100%;
+    left: 5%;
+    height: 10px;
+    width: 90%;
+    opacity: 1;
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 80%);
+}
+
+.scroll-top i {
+    font-size: 40px;
+    /* Cambia el tamaño del icono según tus necesidades */
+    color: white;
+}
+
+.scroll-top:hover {
+    background: #058835;
+}

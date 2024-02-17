@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css" type="text/css">
+    <title>Formulario de Registro de Datos</title>
+   
+</head>
+<body>
+    <div class="container">
+        <!-- Action: Escribir la ruta del archivo php  -->
+        <!--Method: Es como voy a mandar o recibir informacion
+        POST: forma de que yo mande informacion al servidor-->
+        <form action="php/PVBD.php" method="post" class="form" enctype="multipart/form-data" >
+            <header class="header">
+                    <h1>Formulario de Registro  Punto de Venta</h1>
+ 
+            </header>
+                <h3><label for="puntodeventa" class="form_label">Seleccione un punto de venta:</label></h3> 
+                <select name="puntodeventa" id="puntodeventa" class="select_puntodeventa" required > 
+                    <option value="" selected>Seleccione un punto de venta...</option> 
+                    <option value="Ferretería Victor">Ferretería Victor</option>
+                    <option value="Bodega Tushmo">Bodega Tushmo</option> 
+                    <option value="Libreria Monterrico">Libreria Monterrico</option> 
+                    <option value="">Agua San Juan</option> 
+                </select>      
+
+                <br>
+                <label for="planes" class="form_label">Servicio a Contratar:</label>
+                <select name="planes" id="planes"  class="select_plan" required > 
+                 <option value="" selected>Seleccione un Servicio a Contratar...</option> 
+                 <option value="Tv_Cable">Tv Cable(S/.50 + Instalación(S/.50)) .TOTAL = S/.100 </option> 
+                 <option value="Internet_30mbbps">Internet 30 mbps (S/.60 + Instalación(S/.50)).TOTAL = S/.110</option> 
+                 <option value="Internet_50mbbps">Internet 50 mbps (S/.80 + Instalación(S/.50)).TOTAL = S/.130</option> 
+                 <option value="Internet_80mbbps">Internet 80 mbps (S/.120 + Instalación(S/.50)).TOTAL = S/.170</option> 
+                 <option value="Internet_30mbbps_+_cable">Tv Cable + Internet 30 mbps (S/.100 + Instalación(S/.50)).TOTAL = S/.150</option> 
+                 <option value="Internet_50mbbps_+_cable">Tv Cable + Internet 50 mbps (S/.120 + Instalación(S/.50)).TOTAL = S/.170</option> 
+                 <option value="Internet_80mbbps_+_cable">Tv Cable + Internet 80 mbps (S/.160 + Instalación(S/.50)).TOTAL = S/.210</option> 
+                </select>
+                                        
+
+                <h3><label for="nombres_completos" class="form_label">Nombres Completos:</label> </h3> 
+                <input type="text" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,40}" class="form__input" name="nombres_completos" placeholder="Nombre" id="nombre" required oninvalid="alert('Por favor ingrese su nombre completo')">
+               
+                <h3><label for="direccion" class="form_label">Dirección:</label></h3> 
+                <input type="text" class="form__input" name="direccion" placeholder="Direccion" id="direccion" required oninvalid="alert('Por favor ingrese su dirección')">
+
+                <h3> <label for="referencia" class="form_label">Referencia de dirección:</label></h3>
+               
+                <input type="text" class="form__input" name="referencia" placeholder="Referencia" id="referencia" required oninvalid="alert('Por favor ingrese una referencia a su dirección')">
+                <h3><label for="celular" class="form_label">Celular:</label></h3>
+                
+                <input type="text"  pattern="[9-0-]{1,8} " class="form__input" name="celular" placeholder="Celular" id="celular" required oninvalid="alert('Por favor ingrese su celular')">
+                <h3> <label for="imagen" class="form_label">Adjunte su voucher de pago:</label></h3>
+               
+                <input  type="file" id="file-input" name="file" class="form_label">
+                <img id="img-preview">
+                    <script>
+                        // Obtener los elementos HTML
+                           const fileInput = document.getElementById('file-input');
+                           const imgPreview = document.getElementById('img-preview');
+
+                         // Añadimos un listener al input de tipo file
+                            fileInput.addEventListener('change', function() {
+                             // Obtener el archivo seleccionado
+                            const file = fileInput.files[0];
+  
+                             // Crear un objeto FileReader
+                            const reader = new FileReader();
+                            // Añadir un listener para el evento 'load'
+                             reader.addEventListener('load', function() {
+                             // Mostrar la imagen en el elemento 'img-preview'
+                              imgPreview.src = reader.result;
+                                  });
+  
+                             // Leer el archivo como una URL
+                                 reader.readAsDataURL(file);
+                                    });
+                   </script>
+                   <br> <br>
+                   <button class="animation-cer-btn" id="my-form-button">
+                    <b>Enviar Registro</b><span class="line2"></span>
+                </button>
+
+                                    
+        </form>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/wow-animate.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/select2.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+
+    <script src="js/main.js"></script>
+        <script>
+            var form = document.getElementById("my-form-contact");
+    
+            async function handleSubmit(event) {
+                event.preventDefault();
+                var status = document.getElementById("my-form-status-contact");
+                var data = new FormData(event.target);
+                fetch(event.target.action, {
+                    method: form.method,
+                    body: data,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                }).then(response => {
+                    status.innerHTML = "¡Gracias por Enviar tus datos!";
+                    form.reset()
+                }).catch(error => {
+                    status.innerHTML = "Hubo un error al momento de enviar los datos, intente nuevamente"
+                });
+            }
+            form.addEventListener("submit", handleSubmit)
+        </script>
+    </div>
+</body>
+</html>
+

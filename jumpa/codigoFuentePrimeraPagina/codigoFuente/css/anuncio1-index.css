@@ -1,0 +1,41 @@
+
+.anuncio2{
+    text-align: center;
+   margin: 10px;
+  }
+  
+  .anuncio2 h2 {
+    font-family: 'Days One', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 0px;
+  }
+  
+  .anuncio2 h1 {
+    font-size: 60px;
+    color: rgb(255, 165, 0);
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 0px;
+  }
+  
+  
+  @media (max-width: 768px) {
+    .anuncio2 h2 {
+        font-family: 'Days One', sans-serif;
+        font-size: 10px;
+        font-weight: bold;
+        margin: 0;
+        margin-bottom: 0px;
+      }
+      
+      .anuncio2 h1 {
+          
+        font-size: 30px;
+        color: orange;
+        font-weight: bold;
+      }
+      
+  }
+  

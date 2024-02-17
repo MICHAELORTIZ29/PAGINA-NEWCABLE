@@ -1,0 +1,9 @@
+[14-Mar-2023 17:16:09 America/Chicago] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home2/newcable/public_html/php/form.php on line 9
+[14-Mar-2023 17:19:11 America/Chicago] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'newcable_root'@'localhost' (using password: YES) in /home2/newcable/public_html/php/form.php on line 9
+[14-Mar-2023 17:26:07 America/Chicago] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'newcable_root'@'localhost' (using password: YES) in /home2/newcable/public_html/php/form.php on line 9
+[14-Mar-2023 17:30:19 America/Chicago] PHP Warning:  mysqli::__construct(): (HY000/1044): Access denied for user 'newcable_root'@'localhost' to database 'newcable_newcable' in /home2/newcable/public_html/php/form.php on line 9
+[14-Mar-2023 17:31:40 America/Chicago] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'newcable_newcable'@'localhost' (using password: YES) in /home2/newcable/public_html/php/form.php on line 9
+[14-Mar-2023 17:34:20 America/Chicago] PHP Warning:  mysqli::__construct(): (HY000/1044): Access denied for user 'newcable_root'@'localhost' to database 'newcable_newcable' in /home2/newcable/public_html/php/form.php on line 9
+[14-Mar-2023 17:35:45 America/Chicago] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'newcable_root'@'localhost' (using password: YES) in /home2/newcable/public_html/php/form.php on line 9
+[20-Mar-2023 08:31:42 America/Chicago] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home2/newcable/public_html/php/PVBD.php on line 7
+[20-Mar-2023 08:33:27 America/Chicago] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home2/newcable/public_html/php/PVBD.php on line 7
